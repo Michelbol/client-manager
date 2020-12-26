@@ -1,0 +1,137 @@
+[
+  {
+    "uf": "AC",
+    "name": "Acre",
+    "id": "1"
+  },
+  {
+    "uf": "AL",
+    "name": "Alagoas",
+    "id": "2"
+  },
+  {
+    "uf": "AM",
+    "name": "Amazonas",
+    "id": "3"
+  },
+  {
+    "uf": "AP",
+    "name": "Amapá",
+    "id": "4"
+  },
+  {
+    "uf": "BA",
+    "name": "Bahia",
+    "id": "5"
+  },
+  {
+    "uf": "CE",
+    "name": "Ceará",
+    "id": "6"
+  },
+  {
+    "uf": "DF",
+    "name": "Distrito Federal",
+    "id": "7"
+  },
+  {
+    "uf": "ES",
+    "name": "Espírito Santo",
+    "id": "8"
+  },
+  {
+    "uf": "GO",
+    "name": "Goiás",
+    "id": "9"
+  },
+  {
+    "uf": "MA",
+    "name": "Maranhão",
+    "id": "10"
+  },
+  {
+    "uf": "MG",
+    "name": "Minas Gerais",
+    "id": "11"
+  },
+  {
+    "uf": "MS",
+    "name": "Mato Grosso do Sul",
+    "id": "12"
+  },
+  {
+    "uf": "MT",
+    "name": "Mato Grosso",
+    "id": "13"
+  },
+  {
+    "uf": "PA",
+    "name": "Pará",
+    "id": "14"
+  },
+  {
+    "uf": "PB",
+    "name": "Paraíba",
+    "id": "15"
+  },
+  {
+    "uf": "PE",
+    "name": "Pernambuco",
+    "id": "16"
+  },
+  {
+    "uf": "PI",
+    "name": "Piauí",
+    "id": "17"
+  },
+  {
+    "uf": "PR",
+    "name": "Paraná",
+    "id": "18"
+  },
+  {
+    "uf": "RJ",
+    "name": "Rio de Janeiro",
+    "id": "19"
+  },
+  {
+    "uf": "RN",
+    "name": "Rio Grande do Norte",
+    "id": "20"
+  },
+  {
+    "uf": "RR",
+    "name": "Roraima",
+    "id": "21"
+  },
+  {
+    "uf": "RO",
+    "name": "Rondônia",
+    "id": "22"
+  },
+  {
+    "uf": "RS",
+    "name": "Rio Grande do Sul",
+    "id": "23"
+  },
+  {
+    "uf": "SC",
+    "name": "Santa Catarina",
+    "id": "24"
+  },
+  {
+    "uf": "SE",
+    "name": "Sergipe",
+    "id": "25"
+  },
+  {
+    "uf": "SP",
+    "name": "São Paulo",
+    "id": "26"
+  },
+  {
+    "uf": "TO",
+    "name": "Tocantins",
+    "id": "27"
+  }
+]
