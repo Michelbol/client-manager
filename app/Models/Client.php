@@ -79,6 +79,6 @@ class Client extends Model
      */
     public function setZipCodeAttribute($value)
     {
-        $this->attributes['zip_code'] = returnOnlyNumbers($value);
+        $this->attributes['zip_code'] = isset($value) ? returnOnlyNumbers($value) : $value;
     }
 }
