@@ -15,6 +15,6 @@ Route::get('/', function () {
     return redirect()->route('clients.index');
 })->name('home');
 
-Route::resource('clients', 'ClientController');
+Route::resource('clients', 'ClientController')->except(['show']);
 
 Route::get('cities/{state}', 'CityController@getCityByState');

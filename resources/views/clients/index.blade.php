@@ -38,12 +38,23 @@
                     <td>{{ __("enums.gender.$client->gender") }}</td>
                     <td>{{ $client->city_name }}</td>
                     <td>
-                        <button type="button" class="btn btn-outline-warning btn-sm">
-                            <i class="fas fa-pen"></i>
-                        </button>
-                        <button type="button" class="btn btn-outline-danger btn-sm">
-                            <i class="fas fa-trash"></i>
-                        </button>
+                       <div class="d-flex">
+                           <a type="button" class="btn btn-outline-warning btn-sm" href="{{ route('clients.edit', $client->id) }}">
+                               <i class="fas fa-pen"></i>
+                           </a>
+                           <a
+                               type="button"
+                               class="btn btn-outline-danger btn-sm mx-1"
+                               href="#"
+                               onclick="event.preventDefault();if(confirm('Deseja excluir este item?')){document.getElementById('form-delete-{{ $client->id }}').submit();}"
+                           >
+                               <i class="fas fa-trash"></i>
+                           </a>
+                           <form method="POST" id="form-delete-{{ $client->id }}" action="{{ route('clients.destroy', $client->id) }}" class="mx-1">
+                               {{ csrf_field() }}
+                               <input name="_method" type="hidden" value="DELETE">
+                           </form>
+                       </div>
                     </td>
                 </tr>
             @endforeach

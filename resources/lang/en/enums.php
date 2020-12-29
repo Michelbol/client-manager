@@ -2,8 +2,8 @@
 
 return [
     'gender' => [
-        'F' => 'Feminino',
-        'M' => 'Masculino',
-        'O' => 'Outros'
+        'F' => 'Male',
+        'M' => 'Female',
+        'O' => 'Others'
     ]
 ];
