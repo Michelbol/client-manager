@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Cache::clear();
          $this->call(CountryTableSeeder::class);
          $this->call(StateTableSeeder::class);
          $this->call(CityTableSeeder::class);

@@ -18,6 +18,12 @@
 </div>
 
 @include('layouts._scripts')
-
+@if(Session::has('message'))
+    <script>
+        $(document).ready(function () {
+            notify("{!! Session::get('message')['msg']!!}", "{!! Session::get('message')['type']!!}");
+        });
+    </script>
+@endif
 </body>
 </html>

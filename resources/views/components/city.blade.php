@@ -1,5 +1,8 @@
 @php
     $cities = [];
+    if(isset($selected) && isset($stateId)){
+        $cities = \App\Models\City::whereStateId($stateId)->get();
+    }
     $id = $id ?? 'city_id';
     $parentId = $parentId ?? 'state_id';
     $label = $label ?? 'Cidade';
@@ -62,6 +65,9 @@
 
         $(document).ready(function(){
             if($SELECT_PARENT.val() !== undefined && $SELECT_PARENT.val().length > 0){
+                if($SELECT_CITY.val() !== undefined && $SELECT_CITY.val() !== null && $SELECT_CITY.val().length > 0){
+                    return;
+                }
                 changeParent();
             }
         });

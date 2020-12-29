@@ -3,13 +3,15 @@
     <div class="col-4">
         <div class="mb-3">
             <label for="name" class="form-label">Nome *</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <input type="text" class="form-control" id="name" name="name" required
+                   value="{{ isset($client) ? $client->name : '' }}">
         </div>
     </div>
     <div class="col-4">
         <div class="mb-3">
             <label for="date_of_birth" class="form-label">Data de Nascimento *</label>
-            <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" required>
+            <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" required
+                   value="{{ isset($client) ? $client->date_of_birth->format('d/m/Y') : '' }}">
         </div>
     </div>
     <div class="col-4">
@@ -18,7 +20,7 @@
 'components.sex',
 [
     'required' => true,
-    'selected' => null
+    'selected' => isset($client) ? $client->gender : null
 ])
             @endcomponent
         </div>
@@ -29,7 +31,8 @@
         <div class="mb-3">
             <label for="zip_code" class="form-label">Cep</label>
             <div class="input-group flex-nowrap">
-                <input type="text" class="form-control cep" name="zip_code" id="zip_code">
+                <input type="text" class="form-control cep" name="zip_code" id="zip_code"
+                 value="{{ isset($client) ? $client->zip_code : '' }}">
                 <button class="btn btn-outline-primary" type="button" id="search-zip-code"><i class="fas fa-search"></i></button>
             </div>
         </div>
@@ -37,19 +40,22 @@
     <div class="col-4">
         <div class="mb-3">
             <label for="address" class="form-label">Endereço</label>
-            <input type="text" class="form-control" name="address" id="address">
+            <input type="text" class="form-control" name="address" id="address"
+                   value="{{ isset($client) ? $client->address : '' }}">
         </div>
     </div>
     <div class="col-2">
         <div class="mb-3">
             <label for="number" class="form-label">Número</label>
-            <input type="text" class="form-control" name="number" id="number">
+            <input type="text" class="form-control" name="number" id="number"
+                   value="{{ isset($client) ? $client->number : '' }}">
         </div>
     </div>
     <div class="col-4">
         <div class="mb-3">
             <label for="complement" class="form-label">Complemento</label>
-            <input type="text" class="form-control" name="complement" id="complement">
+            <input type="text" class="form-control" name="complement" id="complement"
+                   value="{{ isset($client) ? $client->complement : '' }}">
         </div>
     </div>
 </div>
@@ -57,15 +63,16 @@
     <div class="col-4">
         <div class="mb-3">
             <label for="neighborhood" class="form-label">Bairro</label>
-            <input type="text" class="form-control" name="neighborhood" id="neighborhood">
+            <input type="text" class="form-control" name="neighborhood" id="neighborhood"
+                   value="{{ isset($client) ? $client->neighborhood : '' }}">
         </div>
     </div>
     <div class="col-4">
-        @component('components.state')
+        @component('components.state', ['selected' => isset($client) ? $client->city->state->id : null])
         @endcomponent
     </div>
     <div class="col-4">
-        @component('components.city')
+        @component('components.city', ['selected' => isset($client) ? $client->city->id : null , 'stateId' => isset($client) ? $client->city->state->id : null])
         @endcomponent
     </div>
 </div>
