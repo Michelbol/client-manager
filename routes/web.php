@@ -16,3 +16,5 @@ Route::get('/', function () {
 })->name('home');
 
 Route::resource('clients', 'ClientController');
+
+Route::get('cities/{state}', 'CityController@getCityByState');

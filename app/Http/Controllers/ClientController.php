@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ClientIndexRequest;
+use App\Http\Requests\ClientStoreRequest;
 use App\Services\ClientService;
+use DB;
+use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
@@ -17,6 +21,10 @@ class ClientController extends Controller
      */
     private $clientService;
 
+    /**
+     * ClientController constructor.
+     * @param ClientService $clientService
+     */
     public function __construct(ClientService $clientService)
     {
         $this->clientService = $clientService;
@@ -48,22 +56,26 @@ class ClientController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Response
+     * @return Application|Factory|Response|View
      */
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
-     * @return Response
+     * @param ClientStoreRequest $request
+     * @return RedirectResponse
+     * @throws Exception
      */
-    public function store(Request $request)
+    public function store(ClientStoreRequest $request)
     {
-        //
+        DB::beginTransaction();
+        $this->clientService->create($request->validated());
+        DB::commit();
+        return redirect()->route('clients.index');
     }
 
     /**
