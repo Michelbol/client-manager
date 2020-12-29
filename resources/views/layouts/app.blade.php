@@ -12,7 +12,9 @@
 <body>
 <div>
     @include('layouts._nav')
-    @yield('content')
+    <div class="container-fluid mt-2">
+        @yield('content')
+    </div>
 </div>
 
 @include('layouts._scripts')
